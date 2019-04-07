@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  # YOUR_INGRESS_NAME
+  name: geoapi-ingress
+  annotations:  
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+spec:
+  tls:
+  - hosts:
+    # YOUR_HOSTS_FOR_THIS_INGRESS (CAN BE MANY)
+    - apisslteste.brasilsabido.com.br
+    - apisslteste2.brasilsabido.com.br
+    secretName: letsencrypt-prod
+  rules:
+    # HOST_1
+  - host: apisslteste.brasilsabido.com.br
+    http:
+      paths:
+      - backend:
+          # YOUR_SERVICE_NAME_HOST_1
+          serviceName: echo1
+          servicePort: 80
+    # HOST_2
+  - host: apisslteste2.brasilsabido.com.br
+    http:
+      paths:
+      - backend:
+          # YOUR_SERVIE_NAME_FOR_HOST_2
+          serviceName: echo2
+          servicePort: 80
+          

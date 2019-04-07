@@ -84,6 +84,12 @@ status:
 ```
 
 
+![Rancher](https://github.com/joaoverissimo/letsencrypt-rancher-cert-manager-config/raw/master/1554632302190.png "Rancher")
+
+![Rancher](https://github.com/joaoverissimo/letsencrypt-rancher-cert-manager-config/blob/master/1554633150466.png?raw=true "Rancher")
+
+
+
 ## References
 
 * https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-with-cert-manager-on-digitalocean-kubernetes

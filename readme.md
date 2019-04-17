@@ -66,8 +66,9 @@ kubectl create -f 2-create-ingress.yaml
 2. In ssl/tls, add certificate, then set your host
 3. use the follow annotations:
 ```yml
-kubernetes.io/ingress.class: nginx
-certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+kubernetes.io/ingress.class=nginx
+certmanager.k8s.io/cluster-issuer=letsencrypt-prod
+kubernetes.io/tls-acme="true"
 ```
 4. Save
 5. An anoing bug is that sometimes the value yaml for `spec > tls > hosts > secretName` is not filled. This means, that is necessary go [View/Edit Yaml] and add the secret name:
